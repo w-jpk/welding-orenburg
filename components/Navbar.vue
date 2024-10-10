@@ -41,7 +41,7 @@ onUnmounted(() => {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem;
   background-color: transparent;
   transition: background-color 0.3s ease-in-out;
   z-index: 1000;
@@ -50,6 +50,13 @@ onUnmounted(() => {
 .navbar.scrolled {
   background-color: white !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  a,
+  h1 {
+    color: black;
+  }
+  button {
+    color: black;
+  }
 }
 
 .container {
@@ -62,9 +69,11 @@ onUnmounted(() => {
 
 .nav {
   display: flex;
-  flex: 1;
+  flex: 0 0 auto;
   justify-content: center;
-  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 ul {
@@ -73,6 +82,7 @@ ul {
   gap: 1rem;
   padding: 0;
   margin: 0;
+  font-size: 15px;
 }
 
 .contact {
@@ -86,10 +96,25 @@ ul {
 .contact button {
   margin: 0;
   padding: 0;
+  font-size: 15px;
 }
 
-li a {
+a,
+h1 {
   text-decoration: none;
-  color: black;
+  color: white;
+}
+
+button {
+  background-color: rgba(255, 255, 255, 0.16);
+  border: none;
+  cursor: pointer;
+  color: white;
+  border: 5px rgba(255, 255, 255, 0.16);
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  width: 200px;
+  height: 35px;
 }
 </style>
