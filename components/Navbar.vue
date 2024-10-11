@@ -15,7 +15,7 @@
       </nav>
       <div class="contact">
         <a href="tel:+79999999999">+7 (999) 999-99-99</a>
-        <button><a href="tel:+79226209490">Позвонить</a></button>
+        <button @click="call">Позвонить</button>
       </div>
     </div>
   </div>
@@ -31,6 +31,10 @@ const navItems = ref([
   { text: "Услуги", link: "#services" },
   { text: "Контакты", link: "#contact-us" },
 ]);
+
+const call = () => {
+  window.location.href = "tel:+79226209490";
+};
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;
