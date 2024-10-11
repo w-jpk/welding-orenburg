@@ -15,7 +15,7 @@
       </nav>
       <div class="contact">
         <a href="tel:+79999999999">+7 (999) 999-99-99</a>
-        <button>Позвонить</button>
+        <button><a href="tel:+79226209490">Позвонить</a></button>
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@ const activeIndex = ref(0);
 const navItems = ref([
   { text: "Главная", link: "#" },
   { text: "Услуги", link: "#services" },
-  { text: "Контакты", link: "#contacts" },
+  { text: "Контакты", link: "#contact-us" },
 ]);
 
 const handleScroll = () => {
@@ -62,7 +62,7 @@ onUnmounted(() => {
 }
 
 .navbar.scrolled {
-  background-color: white !important;
+  background-color: #fac5a0 !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   a,
   h1 {
@@ -70,6 +70,7 @@ onUnmounted(() => {
   }
   button {
     color: black;
+    background-color: transparent;
   }
 }
 
@@ -135,11 +136,11 @@ h1 {
 }
 
 button {
-  background-color: rgba(255, 255, 255, 0.16);
+  background-color: #fac5a049;
   border: none;
   cursor: pointer;
   color: white;
-  border: 5px rgba(255, 255, 255, 0.16);
+  border: 5px;
   padding: 1rem 1.5rem;
   font-size: 1rem;
   border-radius: 0.5rem;

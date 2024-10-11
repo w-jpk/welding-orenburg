@@ -43,7 +43,25 @@
         </nav>
       </div>
     </section>
-    <section id="services"></section>
+    <section id="services">
+      <h1>Наши услуги</h1>
+    </section>
+    <section id="works">
+      <h1>Наши работы</h1>
+    </section>
+    <section id="about-us">
+      <h1>О нас</h1>
+    </section>
+    <section id="contact-us">
+      <h1>Контакты</h1>
+    </section>
+    <section id="footer">
+      <p class="footer-text">
+        Copyright &#169; 2024
+        <a href="https://github.com/w-jpk" class="footer-link">W-JPK</a>. All
+        Rights Reserved.
+      </p>
+    </section>
   </div>
 </template>
 
@@ -57,25 +75,25 @@ const banners = [
   {
     subtitle: "СВАРКА ОРГАНОМ",
     title: "ОРЕНБУРГ",
-    link: "#section-2",
+    link: "#",
     label: "Главная",
   },
   {
     subtitle: "Что мы делаем",
     title: "НИХУЯ",
-    link: "#section-4",
+    link: "#works",
     label: "Работы",
   },
   {
     subtitle: "Где мы находимся",
     title: "Мы находимся в Оренбурге",
-    link: "#section-6",
+    link: "#about-us",
     label: "О нас",
   },
   {
     subtitle: "Наши контакты",
     title: "САМ ИЩИ",
-    link: "#main-footer",
+    link: "#contact-us",
     label: "Контакты",
   },
 ];
@@ -158,7 +176,7 @@ body a {
   height: 100vh;
   color: #fff;
   background-color: #222;
-  background-image: url(https://sun7-19.userapi.com/impf/a7CcJ2uCqjxT9LJ87queofull_tWrgFa2mawZg/JZXkuUa4vAk.jpg?size=2560x0&quality=90&sign=ba7fcba6466c8c19ab1e2beb2bdac1f2);
+  background-image: url(../assets/welding.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -259,8 +277,8 @@ body a {
   .banner-inner-wrapper
   .learn-more-button
   a:hover {
-  color: #28a9ff;
-  border-color: #28a9ff;
+  color: #ff6b00;
+  border-color: #ff6b00;
   transition: 0.3s;
 }
 #section-1 .content-slider .slider #top-banner-1 {
@@ -309,7 +327,7 @@ body a {
   text-transform: uppercase;
   font-family: Montserrat, sans-serif;
   font-size: 1em;
-  color: #bae2fd;
+  color: #fac6a0;
   font-weight: 400;
   cursor: pointer;
   transition: all 0.3s;
@@ -320,7 +338,7 @@ body a {
   left: 0;
   height: 3px;
   width: 100%;
-  background: #bae2fd;
+  background: #fac6a0;
   z-index: 100;
 }
 #section-1 .content-slider nav .controls label .progressbar .progressbar-fill {
@@ -328,14 +346,14 @@ body a {
   width: inherit;
   height: inherit;
   margin-left: -100%;
-  background: #28a9ff;
+  background: #ff6b00;
 }
 #section-1 .content-slider nav .controls label span {
   font-size: 1.4em;
   font-weight: 700;
 }
 #section-1 .content-slider nav .controls label:hover {
-  color: #28a9ff;
+  color: #ff6b00;
 }
 #section-1 .content-slider #banner1:checked ~ .slider #top-banner-1,
 #section-1 .content-slider #banner2:checked ~ .slider #top-banner-2,
@@ -417,6 +435,57 @@ body a {
 #services {
   height: 100dvh;
   width: 100%;
+  background-color: #262626;
+
+  h1 {
+    padding: 5rem 0 0 5rem;
+  }
+}
+
+#works {
+  height: 100dvh;
+  width: 100%;
+  background-color: #262626;
+
+  h1 {
+    padding: 5rem 0 0 5rem;
+  }
+}
+
+#about-us {
+  height: 100dvh;
+  width: 100%;
+  background-color: #262626;
+
+  h1 {
+    padding: 5rem 0 0 5rem;
+  }
+}
+
+#contact-us {
+  height: 100dvh;
+  width: 100%;
+  background-color: #262626;
+
+  h1 {
+    padding: 5rem 0 0 5rem;
+  }
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: #6c757d;
+  text-align: center;
+}
+
+.footer-text .footer-link {
+  color: #5a5a5a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-text .footer-link:hover {
+  color: #007bff;
 }
 
 /* Media Queries */
