@@ -66,7 +66,7 @@ onUnmounted(() => {
 }
 
 .navbar.scrolled {
-  background-color: #FF903F !important;
+  background-color: #ff903f !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   a,
   h1 {
@@ -105,7 +105,7 @@ ul {
 }
 
 li {
-  min-width: 100px; /* Фиксированная ширина для каждого элемента */
+  min-width: 100px;
   text-align: center;
 }
 
@@ -116,7 +116,7 @@ li a {
 }
 
 li.active a {
-  font-weight: 600; /* Жирный текст для активного элемента */
+  font-weight: 600;
 }
 
 .contact {

@@ -65,11 +65,59 @@
         <Gallary />
       </div>
     </section>
-    <section id="about-us">
+    <section id="about-us" class="about-us">
       <h1>О нас</h1>
+      <div class="about-us-content">
+        <div class="about-us-text">
+          <h2>Сварка Органом в Оренбурге</h2>
+          <p>
+            Выполняем сварочные работы алюминия, нержавеющей стали и других
+            цветных металлов.
+          </p>
+          <p>▪️АРГОННОДУГОВАЯ СВАРКА</p>
+          <ul>
+            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
+          </ul>
+          <p>▪️ТОКАРНО-ФРЕЗЕРНЫЕ РАБОТЫ</p>
+          <ul>
+            <li><a href="">плоскошлифовальные работы</a></li>
+            <li><a href="">работы на поперечно-строгальном станке</a></li>
+          </ul>
+        </div>
+
+        <div class="about-us-image">
+          <img src="../assets/welding.png" alt="Описание изображения" />
+        </div>
+      </div>
     </section>
-    <section id="contact-us">
+    <section id="contact-us" class="contact-us">
       <h1>Контакты</h1>
+      <div class="contact-us-content">
+        <div class="contact-us-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2471.0378148305313!2d54.963712376555044!3d51.73234369424582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x417befb432934a59%3A0x2455b998d64a8821!2z0J_QvtC70LjQs9C-0L3QvdCw0Y8sINC40LzQtdC90LggOSDQr9C90LLQsNGA0Y8sINCe0YDQtdC90LHRg9GA0LPRgdC60LDRjyDQvtCx0Lsu!5e0!3m2!1sru!2sru!4v1728654312922!5m2!1sru!2sru"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="contact-us-info">
+          <p><strong>Адрес:</strong> Оренбург, ул. Примерная, д. 1</p>
+          <p><strong>Телефон:</strong> +7 (123) 456-7890</p>
+          <p><strong>Email:</strong> info@example.com</p>
+          <p><strong>Часы работы:</strong> Пн-Пт 09:00 - 18:00</p>
+        </div>
+      </div>
     </section>
     <section id="footer">
       <p class="footer-text">
@@ -471,7 +519,6 @@ body a {
   .progressbar-fill {
   animation: progressBarFill 5s linear;
 }
-/* Animations */
 @keyframes progressBarFill {
   from {
     margin-left: -100%;
@@ -498,24 +545,24 @@ body a {
 
 .product-layout {
   display: flex;
-  height: 100%; /* Задайте высоту в зависимости от вашего макета */
+  height: 100%;
   justify-content: center;
   align-items: center;
   gap: 3rem;
 }
 
 .side-products {
-  width: 500px; /* Задайте ширину для боковой колонки */
+  width: 500px;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Два товара в строке */
-  gap: 16px; /* Отступы между карточками */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 
 .product-card {
-  width: 100%; /* Обеспечивает полную ширину карточки товара */
+  width: 100%;
 }
 
 #works {
@@ -549,6 +596,30 @@ body a {
     padding: 5rem 0 0 5rem;
   }
 }
+.about-us-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5rem;
+  height: 100%;
+}
+
+.about-us-text {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.about-us-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-us-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 
 #contact-us {
   height: 100dvh;
@@ -558,6 +629,31 @@ body a {
   h1 {
     padding: 5rem 0 0 5rem;
   }
+}
+
+.contact-us-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 5rem;
+  margin-top: 5rem;
+}
+
+.contact-us-map {
+  flex: 1;
+  margin-right: 2rem;
+}
+
+.contact-us-info {
+  flex: 1;
+}
+
+.contact-us-info h2 {
+  margin-bottom: 1rem;
+}
+
+.contact-us-info p {
+  margin-bottom: 0.5rem;
 }
 
 #footer {

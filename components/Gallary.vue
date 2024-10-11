@@ -10,8 +10,6 @@
 
 <script setup>
 import { ref } from "vue";
-
-// Импортируем изображения
 import prod1 from "../assets/prod_1.png";
 import prod2 from "../assets/prod_2.png";
 import prod3 from "../assets/prod_3.png";
@@ -46,13 +44,13 @@ const images = ref([
 }
 
 .gallery-grid {
-  display: flex; /* Изменено на flexbox */
-  overflow-x: auto; /* Прокрутка по горизонтали, если изображения не помещаются */
-  gap: 1rem; /* Пробел между элементами */
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
 }
 
 .gallery-item {
-  flex: 0 0 auto; /* Не растягивать и не сжимать элементы */
+  flex: 0 0 auto;
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -60,8 +58,8 @@ const images = ref([
 }
 
 .gallery-item img {
-  width: 100%; /* Изображения занимают всю ширину контейнера */
-  height: auto; /* Высота автоматически подстраивается */
+  width: 100%;
+  height: auto;
   display: block;
   border-radius: 8px;
   cursor: pointer;
