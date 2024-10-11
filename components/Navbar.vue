@@ -66,7 +66,7 @@ onUnmounted(() => {
 }
 
 .navbar.scrolled {
-  background-color: #fac5a0 !important;
+  background-color: #FF903F !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   a,
   h1 {

@@ -43,11 +43,27 @@
         </nav>
       </div>
     </section>
-    <section id="services">
+    <section id="services" class="services-container">
       <h1>Наши услуги</h1>
+      <div class="product-layout">
+        <div class="main-product">
+          <ProductCard :product="mainProduct" />
+        </div>
+        <div class="side-products">
+          <div class="grid-container">
+            <ProductCard
+              v-for="(product, index) in sideProducts"
+              :key="index"
+              :product="product" />
+          </div>
+        </div>
+      </div>
     </section>
     <section id="works">
-      <h1>Наши работы</h1>
+      <div class="works-title"><h1>Наши работы</h1></div>
+      <div class="gallary-container">
+        <Gallary />
+      </div>
     </section>
     <section id="about-us">
       <h1>О нас</h1>
@@ -68,8 +84,41 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import Navbar from "~/components/Navbar.vue";
+import ProductCard from "~/components/ProductCard.vue";
+import Gallary from "~/components/Gallary.vue";
+import prod_1 from "~/assets/prod_1.png";
+import prod_2 from "~/assets/prod_2.png";
+import prod_3 from "~/assets/prod_3.png";
 
 const currentBanner = ref(1);
+
+const mainProduct = {
+  image: prod_3,
+  name: "Основной товар",
+  price: "3000 руб.",
+};
+const sideProducts = [
+  {
+    image: prod_1,
+    name: "Товар 1",
+    price: "от 1000 руб.",
+  },
+  {
+    image: prod_2,
+    name: "Товар 2",
+    price: "от 1500 руб.",
+  },
+  {
+    image: prod_3,
+    name: "Товар 3",
+    price: "от 2000 руб.",
+  },
+  {
+    image: prod_1,
+    name: "Товар 4",
+    price: "от 2500 руб.",
+  },
+];
 
 const banners = [
   {
@@ -442,14 +491,53 @@ body a {
   }
 }
 
+.services-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-layout {
+  display: flex;
+  height: 100%; /* Задайте высоту в зависимости от вашего макета */
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.side-products {
+  width: 500px; /* Задайте ширину для боковой колонки */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Два товара в строке */
+  gap: 16px; /* Отступы между карточками */
+}
+
+.product-card {
+  width: 100%; /* Обеспечивает полную ширину карточки товара */
+}
+
 #works {
   height: 100dvh;
   width: 100%;
   background-color: #262626;
+  display: flex;
+  flex-direction: column;
 
   h1 {
     padding: 5rem 0 0 5rem;
   }
+}
+
+.gallary-container {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 #about-us {
@@ -472,20 +560,25 @@ body a {
   }
 }
 
+#footer {
+  width: 100%;
+  background-color: #262626;
+}
+
 .footer-text {
   font-size: 0.9rem;
-  color: #6c757d;
+  color: #fff;
   text-align: center;
 }
 
 .footer-text .footer-link {
-  color: #5a5a5a;
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
 }
 
 .footer-text .footer-link:hover {
-  color: #007bff;
+  color: #ff903f;
 }
 
 /* Media Queries */
