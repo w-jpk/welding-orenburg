@@ -4,13 +4,17 @@
       <h1>Logo</h1>
       <nav class="nav">
         <ul>
-          <li><a href="#">Главная</a></li>
-          <li><a href="#">Услуги</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li
+            v-for="(item, index) in navItems"
+            :key="index"
+            :class="{ active: activeIndex === index }"
+            @click="setActive(index)">
+            <a :href="item.link">{{ item.text }}</a>
+          </li>
         </ul>
       </nav>
       <div class="contact">
-        <a>+7 (999) 999-99-99</a>
+        <a href="tel:+79999999999">+7 (999) 999-99-99</a>
         <button>Позвонить</button>
       </div>
     </div>
@@ -21,9 +25,19 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 const isScrolled = ref(false);
+const activeIndex = ref(0);
+const navItems = ref([
+  { text: "Главная", link: "#" },
+  { text: "Услуги", link: "#services" },
+  { text: "Контакты", link: "#contacts" },
+]);
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;
+};
+
+const setActive = (index) => {
+  activeIndex.value = index;
 };
 
 onMounted(() => {
@@ -83,6 +97,21 @@ ul {
   padding: 0;
   margin: 0;
   font-size: 15px;
+}
+
+li {
+  min-width: 100px; /* Фиксированная ширина для каждого элемента */
+  text-align: center;
+}
+
+li a {
+  display: block;
+  padding: 0.5rem;
+  transition: font-weight 0.3s ease;
+}
+
+li.active a {
+  font-weight: 600; /* Жирный текст для активного элемента */
 }
 
 .contact {
