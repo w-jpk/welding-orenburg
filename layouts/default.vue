@@ -62,7 +62,8 @@
     <section id="works">
       <div class="works-title"><h1>Наши работы</h1></div>
       <div class="gallary-container">
-        <Gallary />
+        <!-- <Gallary /> -->
+        <PhotoSlider />
       </div>
     </section>
     <section id="about-us" class="about-us">
@@ -76,20 +77,20 @@
           </p>
           <p>▪️АРГОННОДУГОВАЯ СВАРКА</p>
           <ul>
-            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
+            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
           </ul>
           <p>▪️ТОКАРНО-ФРЕЗЕРНЫЕ РАБОТЫ</p>
           <ul>
-            <li><a href="">плоскошлифовальные работы</a></li>
-            <li><a href="">работы на поперечно-строгальном станке</a></li>
+            <li><a href="">- плоскошлифовальные работы</a></li>
+            <li><a href="">- работы на поперечно-строгальном станке</a></li>
           </ul>
         </div>
 
@@ -104,7 +105,7 @@
         <div class="contact-us-map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2471.0378148305313!2d54.963712376555044!3d51.73234369424582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x417befb432934a59%3A0x2455b998d64a8821!2z0J_QvtC70LjQs9C-0L3QvdCw0Y8sINC40LzQtdC90LggOSDQr9C90LLQsNGA0Y8sINCe0YDQtdC90LHRg9GA0LPRgdC60LDRjyDQvtCx0Lsu!5e0!3m2!1sru!2sru!4v1728654312922!5m2!1sru!2sru"
-            width="600"
+            width="800"
             height="450"
             style="border: 0"
             allowfullscreen=""
@@ -134,6 +135,7 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 import Navbar from "~/components/Navbar.vue";
 import ProductCard from "~/components/ProductCard.vue";
 import Gallary from "~/components/Gallary.vue";
+import PhotoSlider from "~/components/PhotoSlider.vue";
 import prod_1 from "~/assets/prod_1.png";
 import prod_2 from "~/assets/prod_2.png";
 import prod_3 from "~/assets/prod_3.png";
@@ -313,7 +315,6 @@ body a {
   box-sizing: border-box;
   display: block;
   content: "";
-  height: 100%;
   background: -webkit-gradient(
     linear,
     left top,
@@ -578,8 +579,8 @@ body a {
 }
 
 .gallary-container {
-  margin-left: 3rem;
-  margin-right: 3rem;
+  // margin-left: 3rem;
+  // margin-right: 3rem;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -607,6 +608,23 @@ body a {
 .about-us-text {
   flex: 1;
   padding-right: 2rem;
+
+  h2 {
+    color: white;
+    font-size: 2rem;
+  }
+
+  p {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  a {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
 }
 
 .about-us-image {
