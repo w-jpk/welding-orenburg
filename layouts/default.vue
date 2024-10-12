@@ -103,14 +103,11 @@
       <h1>Контакты</h1>
       <div class="contact-us-content">
         <div class="contact-us-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2471.0378148305313!2d54.963712376555044!3d51.73234369424582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x417befb432934a59%3A0x2455b998d64a8821!2z0J_QvtC70LjQs9C-0L3QvdCw0Y8sINC40LzQtdC90LggOSDQr9C90LLQsNGA0Y8sINCe0YDQtdC90LHRg9GA0LPRgdC60LDRjyDQvtCx0Lsu!5e0!3m2!1sru!2sru!4v1728654312922!5m2!1sru!2sru"
-            width="800"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <YandexMap
+            :center="[51.771258, 55.107025]"
+            :zoom="14"
+            :marker="[51.771258, 55.107025]"
+            markerTitle="Сварка в Оренбурге" />
         </div>
         <div class="contact-us-info">
           <p><strong>Адрес:</strong> Оренбург, ул. Примерная, д. 1</p>
@@ -139,6 +136,7 @@ import PhotoSlider from "~/components/PhotoSlider.vue";
 import prod_1 from "~/assets/prod_1.png";
 import prod_2 from "~/assets/prod_2.png";
 import prod_3 from "~/assets/prod_3.png";
+import YandexMap from "~/components/YandexMap.vue";
 
 const currentBanner = ref(1);
 
