@@ -2,19 +2,19 @@
   <div class="slider">
     <div class="list">
       <div class="item">
-        <img src="../assets/prod_1.png" alt="" />
+        <img src="../assets/images/photo (1).jpg" alt="" />
       </div>
       <div class="item">
-        <img src="../assets/prod_2.png" alt="" />
+        <img src="../assets/images/photo (2).jpg" alt="" />
       </div>
       <div class="item">
-        <img src="../assets/prod_3.png" alt="" />
+        <img src="../assets/images/photo (3).jpg" alt="" />
       </div>
       <div class="item">
-        <img src="../assets/prod_1.png" alt="" />
+        <img src="../assets/images/photo (4).jpg" alt="" />
       </div>
       <div class="item">
-        <img src="../assets/prod_2.png" alt="" />
+        <img src="../assets/images/photo (5).jpg" alt="" />
       </div>
     </div>
     <div class="buttons">
