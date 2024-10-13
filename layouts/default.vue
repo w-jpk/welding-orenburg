@@ -154,11 +154,13 @@ const isModalVisible = ref(false);
 const showModal = (product) => {
   selectedProduct.value = product;
   isModalVisible.value = true;
+  document.body.style.overflow = "hidden";
 };
 
 const hideModal = () => {
   isModalVisible.value = false;
   selectedProduct.value = null;
+  document.body.style.overflow = "";
 };
 
 const loading = ref(true);
