@@ -1,7 +1,7 @@
 <template>
   <div :class="{ scrolled: isScrolled }" class="navbar">
     <div class="container">
-      <h1>Logo</h1>
+      <img class="logo" src="../assets/logo.png" alt="Logo" />
       <nav class="nav">
         <ul>
           <li
@@ -76,6 +76,13 @@ onUnmounted(() => {
     color: black;
     background-color: transparent;
   }
+}
+
+.logo {
+  display: block;
+  margin-left: 2rem;
+  width: 40px;
+  height: 40px;
 }
 
 .container {
