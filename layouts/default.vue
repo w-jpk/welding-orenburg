@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div v-if="loading"><LoadingScreen /></div>
+  <div v-else>
     <Navbar />
     <section id="section-1">
       <div class="content-slider">
@@ -47,14 +48,21 @@
       <h1>Наши услуги</h1>
       <div class="product-layout">
         <div class="main-product">
-          <ProductCard :product="mainProduct" />
+          <ProductCard :product="mainProduct" @open-modal="showModal" />
         </div>
         <div class="side-products">
           <div class="grid-container">
             <ProductCard
               v-for="(product, index) in sideProducts"
               :key="index"
-              :product="product" />
+              :product="product"
+              @open-modal="showModal" />
+            <ProductModal
+              v-if="selectedProduct"
+              :product="selectedProduct"
+              :isVisible="isModalVisible"
+              :style="{ zIndex: 1000 }"
+              @close="hideModal" />
           </div>
         </div>
       </div>
@@ -62,7 +70,6 @@
     <section id="works">
       <div class="works-title"><h1>Наши работы</h1></div>
       <div class="gallary-container">
-        <!-- <Gallary /> -->
         <PhotoSlider />
       </div>
     </section>
@@ -131,40 +138,73 @@
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import Navbar from "~/components/Navbar.vue";
 import ProductCard from "~/components/ProductCard.vue";
-import Gallary from "~/components/Gallary.vue";
 import PhotoSlider from "~/components/PhotoSlider.vue";
 import prod_1 from "~/assets/prod_1.png";
 import prod_2 from "~/assets/prod_2.png";
 import prod_3 from "~/assets/prod_3.png";
 import YandexMap from "~/components/YandexMap.vue";
+import LoadingScreen from "~/components/LoadingScreen.vue";
+import { onNuxtReady } from "#app";
+import ProductModal from "~/components/ProductModal.vue";
+
+const selectedProduct = ref(null);
+const isModalVisible = ref(false);
+
+// Методы для управления модальным окном
+const showModal = (product) => {
+  selectedProduct.value = product;
+  isModalVisible.value = true;
+};
+
+const hideModal = () => {
+  isModalVisible.value = false;
+  selectedProduct.value = null;
+};
+
+const loading = ref(true);
+
+// onNuxtReady(() => {
+//   loading.value = false;
+// });
+
+onMounted(() => {
+  setTimeout(() => {
+    loading.value = false;
+  }, 3000);
+});
 
 const currentBanner = ref(1);
 
 const mainProduct = {
   image: prod_3,
   name: "Основной товар",
-  price: "3000 руб.",
+  price: "от 3000 руб.",
+  description: "Description for product 1",
 };
 const sideProducts = [
   {
     image: prod_1,
     name: "Товар 1",
     price: "от 1000 руб.",
+    description: "Description for product 1",
   },
   {
     image: prod_2,
     name: "Товар 2",
     price: "от 1500 руб.",
+    description: "Description for product 1",
   },
   {
     image: prod_3,
     name: "Товар 3",
     price: "от 2000 руб.",
+    description: "Description for product 1",
   },
   {
     image: prod_1,
     name: "Товар 4",
     price: "от 2500 руб.",
+    description: "Description for product 1",
   },
 ];
 
@@ -551,7 +591,7 @@ body a {
 }
 
 .side-products {
-  width: 500px;
+  width: 530px;
 }
 
 .grid-container {
@@ -600,7 +640,7 @@ body a {
   align-items: center;
   justify-content: space-between;
   padding: 0 5rem;
-  height: 100%;
+  height: 90vh;
 }
 
 .about-us-text {
@@ -638,7 +678,7 @@ body a {
 }
 
 #contact-us {
-  height: 100dvh;
+  height: 90dvh;
   width: 100%;
   background-color: #262626;
 
