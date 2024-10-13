@@ -135,7 +135,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, nextTick, onMounted, onBeforeUnmount } from "vue";
 import Navbar from "~/components/Navbar.vue";
 import ProductCard from "~/components/ProductCard.vue";
 import PhotoSlider from "~/components/PhotoSlider.vue";
@@ -162,16 +162,48 @@ const hideModal = () => {
 };
 
 const loading = ref(true);
+const componentsLoaded = ref(0); // Счетчик для загруженных компонентов
+const totalComponents = 5; // Количество компонентов и изображений, которые нужно загрузить
 
-onNuxtReady(() => {
-  loading.value = false;
+// Функция для отслеживания загрузки изображений
+function waitForImageLoad(imageElement) {
+  return new Promise((resolve) => {
+    if (imageElement.complete) {
+      resolve();
+    } else {
+      imageElement.onload = resolve;
+    }
+  });
+}
+
+// Функция для отслеживания загрузки компонентов
+function markComponentAsLoaded() {
+  componentsLoaded.value += 1;
+  if (componentsLoaded.value === totalComponents) {
+    loading.value = false; // Когда все компоненты и изображения загружены, скрываем экран загрузки
+  }
+}
+
+onMounted(async () => {
+  // Ждем, пока DOM полностью отрендерится
+  await nextTick();
+
+  // Отслеживаем загрузку изображений
+  const images = document.querySelectorAll("img");
+  const imageLoadPromises = Array.from(images).map((img) =>
+    waitForImageLoad(img)
+  );
+
+  // Ждем загрузки всех изображений
+  await Promise.all(imageLoadPromises);
+
+  // Отмечаем компоненты как загруженные по мере их готовности
+  markComponentAsLoaded(); // После загрузки всех изображений
+
+  // Пример: В других компонентах также можно вызывать `markComponentAsLoaded`
+  markComponentAsLoaded(); // Например, после рендеринга ProductCard
+  // Повторите для остальных компонентов или элементов
 });
-
-// onMounted(() => {
-//   setTimeout(() => {
-//     loading.value = false;
-//   }, 3000);
-// });
 
 const currentBanner = ref(1);
 
