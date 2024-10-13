@@ -1,7 +1,10 @@
 <template>
   <div :class="{ scrolled: isScrolled }" class="navbar">
     <div class="container">
-      <img class="logo" src="../assets/logo.png" alt="Logo" />
+      <div class="img-logo" @click="scrollToTop">
+        <img src="../assets/prod_2.png" alt="Logo" />
+        <p>Сварка Аргоном | Оренбург</p>
+      </div>
       <nav class="nav">
         <ul>
           <li
@@ -9,7 +12,7 @@
             :key="index"
             :class="{ active: activeIndex === index }"
             @click="setActive(index)">
-            <a :href="item.link">{{ item.text }}</a>
+            <a>{{ item.text }}</a>
           </li>
         </ul>
       </nav>
@@ -27,7 +30,7 @@ import { ref, onMounted, onUnmounted } from "vue";
 const isScrolled = ref(false);
 const activeIndex = ref(0);
 const navItems = ref([
-  { text: "Главная", link: "#" },
+  { text: "Главная", link: "#section-1" },
   { text: "Услуги", link: "#services" },
   { text: "Контакты", link: "#contact-us" },
 ]);
@@ -41,7 +44,22 @@ const handleScroll = () => {
 };
 
 const setActive = (index) => {
-  activeIndex.value = index;
+  const targetSection = document.querySelector(navItems.value[index].link);
+  if (targetSection) {
+    const offsetTop =
+      targetSection.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
+    setTimeout(() => {
+      activeIndex.value = index;
+    }, 300);
+  }
+};
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 onMounted(() => {
@@ -76,13 +94,27 @@ onUnmounted(() => {
     color: black;
     background-color: transparent;
   }
+  .img-logo p {
+    color: black;
+  }
 }
 
-.logo {
-  display: block;
+.img-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 2rem;
-  width: 40px;
-  height: 40px;
+  gap: 0.5rem;
+  cursor: pointer;
+  img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  p {
+    color: white;
+    font-size: 15px;
+  }
 }
 
 .container {
@@ -120,6 +152,7 @@ li a {
   display: block;
   padding: 0.5rem;
   transition: font-weight 0.3s ease;
+  cursor: pointer;
 }
 
 li.active a {
@@ -130,6 +163,7 @@ li.active a {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  flex: 1;
   gap: 1rem;
 }
 

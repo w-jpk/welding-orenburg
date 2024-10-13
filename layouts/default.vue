@@ -20,8 +20,8 @@
             :id="'top-banner-' + (index + 1)"
             class="banner">
             <div class="banner-inner-wrapper">
-              <h2>{{ banner.subtitle }}</h2>
-              <h1 v-html="banner.title"></h1>
+              <h1>{{ banner.subtitle }}</h1>
+              <h2 v-html="banner.title"></h2>
               <div class="line"></div>
               <div class="learn-more-button">
                 <a :href="banner.link">Узнать больше</a>
@@ -135,7 +135,7 @@
 </template>
 
 <script setup>
-import { ref, nextTick, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import Navbar from "~/components/Navbar.vue";
 import ProductCard from "~/components/ProductCard.vue";
 import PhotoSlider from "~/components/PhotoSlider.vue";
@@ -150,7 +150,6 @@ import ProductModal from "~/components/ProductModal.vue";
 const selectedProduct = ref(null);
 const isModalVisible = ref(false);
 
-// Методы для управления модальным окном
 const showModal = (product) => {
   selectedProduct.value = product;
   isModalVisible.value = true;
@@ -206,14 +205,14 @@ const sideProducts = [
 
 const banners = [
   {
-    subtitle: "СВАРКА ОРГАНОМ",
+    subtitle: "СВАРКА АРГОНОМ",
     title: "ОРЕНБУРГ",
     link: "#",
     label: "Главная",
   },
   {
     subtitle: "Что мы делаем",
-    title: "НИХУЯ",
+    title: "Мы занимаемся сваркой аргоном в Оренбурге",
     link: "#works",
     label: "Работы",
   },
@@ -225,7 +224,7 @@ const banners = [
   },
   {
     subtitle: "Наши контакты",
-    title: "САМ ИЩИ",
+    title: "по кнопке ниже",
     link: "#contact-us",
     label: "Контакты",
   },
