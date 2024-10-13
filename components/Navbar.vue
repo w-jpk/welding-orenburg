@@ -60,6 +60,7 @@ const setActive = (index) => {
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
+  setActive(0);
 };
 
 onMounted(() => {
