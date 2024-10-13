@@ -163,15 +163,15 @@ const hideModal = () => {
 
 const loading = ref(true);
 
-// onNuxtReady(() => {
-//   loading.value = false;
-// });
-
-onMounted(() => {
-  setTimeout(() => {
-    loading.value = false;
-  }, 3000);
+onNuxtReady(() => {
+  loading.value = false;
 });
+
+// onMounted(() => {
+//   setTimeout(() => {
+//     loading.value = false;
+//   }, 3000);
+// });
 
 const currentBanner = ref(1);
 

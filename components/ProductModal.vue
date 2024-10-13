@@ -88,7 +88,7 @@ export default {
 .contact-button {
   margin-top: 30px;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #ff903f;
   color: white;
   border: none;
   border-radius: 5px;
