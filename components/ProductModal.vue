@@ -89,7 +89,7 @@ export default {
   margin-top: 30px;
   padding: 10px 20px;
   background-color: #ff903f;
-  color: white;
+  color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
