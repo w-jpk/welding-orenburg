@@ -5,6 +5,12 @@ export default defineNuxtConfig({
   modules: ["@vueuse/nuxt", "@nuxt/fonts", "@nuxt/image", "nuxt-typed-router"],
   app: {
     head: {
+      title: "Сварка Аргоном | Оренбург",
+      meta: [
+        { name: "description", content: "Сварка Аргоном | Оренбург" },
+        { name: "keywords", content: "Сварка Аргоном | Оренбург" },
+      ],
+      link: [{ rel: "icon", type: "image/png", href: "~/assets/logo.png" }],
       script: [
         {
           src: "https://api-maps.yandex.ru/2.1/?lang=ru_RU",

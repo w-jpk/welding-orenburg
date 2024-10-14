@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ scrolled: isScrolled }" class="navbar">
+  <div :class="{ scrolled: isScrolled }" class="desktop-navbar">
     <div class="container">
       <div class="img-logo" @click="scrollToTop">
         <img src="../assets/prod_2.png" alt="Logo" />
@@ -26,6 +26,12 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+
+const isHide = ref(true);
+
+const toggleHide = () => {
+  isHide.value = !isHide.value;
+};
 
 const isScrolled = ref(false);
 const activeIndex = ref(0);
@@ -73,7 +79,8 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.navbar {
+.desktop-navbar {
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -84,7 +91,7 @@ onUnmounted(() => {
   z-index: 1000;
 }
 
-.navbar.scrolled {
+.desktop-navbar.scrolled {
   background-color: #ff903f !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   a,
@@ -98,6 +105,9 @@ onUnmounted(() => {
   .img-logo p {
     color: black;
   }
+  .img-logo img {
+    border: none;
+  }
 }
 
 .img-logo {
@@ -108,6 +118,7 @@ onUnmounted(() => {
   gap: 0.5rem;
   cursor: pointer;
   img {
+    border: white 2px solid;
     border-radius: 50%;
     width: 40px;
     height: 40px;

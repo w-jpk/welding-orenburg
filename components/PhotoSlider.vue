@@ -161,6 +161,14 @@ function reloadSlider() {
 }
 @media screen and (max-width: 768px) {
   .slider {
+    width: 600px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slider {
+    width: 400px;
     height: 400px;
   }
 }
