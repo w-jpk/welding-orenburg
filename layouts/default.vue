@@ -70,7 +70,7 @@
     <section id="works">
       <div class="works-title"><h1>Наши работы</h1></div>
       <div class="gallary-container">
-        <PhotoSlider />
+        <PhotoGrid />
       </div>
     </section>
     <section id="about-us" class="about-us">
@@ -138,7 +138,6 @@
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import Navbar from "~/components/Navbar.vue";
 import ProductCard from "~/components/ProductCard.vue";
-import PhotoSlider from "~/components/PhotoSlider.vue";
 import prod_1 from "~/assets/prod_1.png";
 import prod_2 from "~/assets/prod_2.png";
 import prod_3 from "~/assets/prod_3.png";
@@ -146,6 +145,7 @@ import YandexMap from "~/components/YandexMap.vue";
 import LoadingScreen from "~/components/LoadingScreen.vue";
 import { onNuxtReady } from "#app";
 import ProductModal from "~/components/ProductModal.vue";
+import PhotoGrid from "~/components/PhotoGrid.vue";
 
 const selectedProduct = ref(null);
 const isModalVisible = ref(false);
@@ -712,6 +712,7 @@ body a {
 #footer {
   width: 100%;
   background-color: #262626;
+  height: 4vh;
 }
 
 .footer-text {

@@ -1,4 +1,32 @@
 <template>
+  <div class="mobile-navbar">
+    <div class="mobile-container">
+      <div class="burger" @click="toggleHide">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav v-if="!isHide" class="mobile-nav">
+        <div class="img-logo" @click="scrollToTop">
+          <img src="../assets/prod_2.png" alt="Logo" />
+          <p>Сварка Аргоном | Оренбург</p>
+        </div>
+        <ul>
+          <li
+            v-for="(item, index) in navItems"
+            :key="index"
+            :class="{ active: activeIndex === index }"
+            @click="setActive(index)">
+            <a>{{ item.text }}</a>
+          </li>
+        </ul>
+        <div class="contact">
+          <a href="tel:+79999999999">+7 (999) 999-99-99</a>
+          <button @click="call">Позвонить</button>
+        </div>
+      </nav>
+    </div>
+  </div>
   <div :class="{ scrolled: isScrolled }" class="desktop-navbar">
     <div class="container">
       <div class="img-logo" @click="scrollToTop">
@@ -83,12 +111,15 @@ onUnmounted(() => {
   display: block;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   padding: 1rem;
   background-color: transparent;
   transition: background-color 0.3s ease-in-out;
   z-index: 1000;
+}
+
+.mobile-navbar {
+  display: none;
 }
 
 .desktop-navbar.scrolled {
@@ -203,5 +234,94 @@ button {
   border-radius: 0.5rem;
   width: 200px;
   height: 35px;
+}
+
+@media only screen and (max-width: 1120px) {
+  .desktop-navbar {
+    display: none;
+  }
+
+  .mobile-navbar {
+    display: block;
+    position: absolute;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .mobile-nav {
+    justify-content: center;
+    background-color: #ff903f;
+    height: 100vh;
+    position: absolute;
+    transition: top 0.3s ease-in-out;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    cursor: pointer;
+  }
+
+  .burger span {
+    width: 25px;
+    height: 3px;
+    margin-left: auto;
+    background-color: white;
+  }
+
+  .mobile-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 15px;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .img-logo {
+    align-content: center;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .desktop-navbar {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    cursor: pointer;
+  }
+
+  .burger span {
+    width: 25px;
+    height: 3px;
+    margin-left: auto;
+    background-color: white;
+  }
 }
 </style>
