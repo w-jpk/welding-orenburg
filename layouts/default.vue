@@ -111,15 +111,15 @@
       <div class="contact-us-content">
         <div class="contact-us-map">
           <YandexMap
-            :center="[51.771258, 55.107025]"
-            :zoom="14"
-            :marker="[51.771258, 55.107025]"
+            :center="[51.766025, 55.140745]"
+            :zoom="16"
+            :marker="[51.766025, 55.140745]"
             markerTitle="Сварка в Оренбурге" />
         </div>
         <div class="contact-us-info">
           <p><strong>Адрес:</strong> Оренбург, ул. Примерная, д. 1</p>
-          <p><strong>Телефон:</strong> +7 (123) 456-7890</p>
-          <p><strong>Email:</strong> info@example.com</p>
+          <p><strong>Телефон:</strong> +7 (922) 829-39-74</p>
+          <!-- <p><strong>Email:</strong> info@example.com</p> -->
           <p><strong>Часы работы:</strong> Пн-Пт 09:00 - 18:00</p>
         </div>
       </div>

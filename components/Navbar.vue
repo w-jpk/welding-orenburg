@@ -45,7 +45,7 @@
         </ul>
       </nav>
       <div class="contact">
-        <a href="tel:+79999999999">+7 (999) 999-99-99</a>
+        <a href="tel:+79228293974">+7 (922) 829-39-74</a>
         <button @click="call">Позвонить</button>
       </div>
     </div>
@@ -70,7 +70,7 @@ const navItems = ref([
 ]);
 
 const call = () => {
-  window.location.href = "tel:+79226209490";
+  window.location.href = "tel:+79228293974";
 };
 
 const handleScroll = () => {
