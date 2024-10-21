@@ -76,34 +76,7 @@
     <section id="about-us" class="about-us">
       <h1>О нас</h1>
       <div class="about-us-content">
-        <div class="about-us-text">
-          <h2>Сварка Органом в Оренбурге</h2>
-          <p>
-            Выполняем сварочные работы алюминия, нержавеющей стали и других
-            цветных металлов.
-          </p>
-          <p>▪️АРГОННОДУГОВАЯ СВАРКА</p>
-          <ul>
-            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
-            <li><a href="">- сварка алюминиевых деталей двигателей</a></li>
-          </ul>
-          <p>▪️ТОКАРНО-ФРЕЗЕРНЫЕ РАБОТЫ</p>
-          <ul>
-            <li><a href="">- плоскошлифовальные работы</a></li>
-            <li><a href="">- работы на поперечно-строгальном станке</a></li>
-          </ul>
-        </div>
-
-        <div class="about-us-image">
-          <img src="../assets/welding.png" alt="Описание изображения" />
-        </div>
+        <AboutUsSlider />
       </div>
     </section>
     <section id="contact-us" class="contact-us">
@@ -119,7 +92,6 @@
         <div class="contact-us-info">
           <p><strong>Адрес:</strong> Оренбург, ул. Примерная, д. 1</p>
           <p><strong>Телефон:</strong> +7 (922) 829-39-74</p>
-          <!-- <p><strong>Email:</strong> info@example.com</p> -->
           <p><strong>Часы работы:</strong> Пн-Пт 09:00 - 18:00</p>
         </div>
       </div>
@@ -146,6 +118,7 @@ import LoadingScreen from "~/components/LoadingScreen.vue";
 import { onNuxtReady } from "#app";
 import ProductModal from "~/components/ProductModal.vue";
 import PhotoGrid from "~/components/PhotoGrid.vue";
+import AboutUsSlider from "~/components/AboutUsSlider.vue";
 
 const selectedProduct = ref(null);
 const isModalVisible = ref(false);
@@ -173,7 +146,7 @@ const currentBanner = ref(1);
 const mainProduct = {
   image: prod_3,
   name: "Основной товар",
-  price: "от 3000 руб.",
+  price: "от 3000 руб-",
   description: "Description for product 1",
 };
 const sideProducts = [
@@ -257,6 +230,7 @@ body {
 body section {
   display: block;
 }
+
 body h1,
 body h2,
 body h3,
@@ -635,9 +609,9 @@ body a {
 .about-us-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 5rem;
-  height: 90vh;
+  justify-content: center;
+  // padding: 0 5rem;
+  // height: 90vh;
 }
 
 .about-us-text {
