@@ -8,8 +8,18 @@ export default defineNuxtConfig({
     head: {
       title: "Сварка Аргоном | Оренбург",
       meta: [
-        { name: "description", content: "Сварка Аргоном | Оренбург" },
-        { name: "keywords", content: "Сварка Аргоном | Оренбург" },
+        { name: "description", content: "Сварка Аргоном в городе Оренбург." },
+        {
+          name: "keywords",
+          content: "Сварка, Аргон, Оренбург, Сварка Аргоном",
+        },
+        { name: "robots", content: "index, follow" },
+        { property: "og:title", content: "Сварка Аргоном | Оренбург" },
+        {
+          property: "og:description",
+          content: "Сварка Аргоном в городе Оренбург.",
+        },
+        { property: "og:image", content: "~/assets/logo.png" },
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
       charset: "utf-8",
