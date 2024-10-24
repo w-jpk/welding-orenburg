@@ -70,7 +70,7 @@
     <section id="works">
       <div class="works-title"><h1>Наши работы</h1></div>
       <div class="gallary-container">
-        <PhotoGrid />
+        <PhotoGrid :style="{ zIndex: 999 }" />
       </div>
     </section>
     <section id="about-us" class="about-us">
@@ -149,7 +149,7 @@ const currentBanner = ref(1);
 const mainProduct = {
   image: prod_3,
   name: "Основной товар",
-  price: "от 3000 руб-",
+  price: "от 3000 руб.",
   description: "Description for product 1",
 };
 const sideProducts = [

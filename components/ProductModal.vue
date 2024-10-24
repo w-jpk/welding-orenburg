@@ -7,9 +7,7 @@
           <h2>{{ product.name }}</h2>
           <span class="product-price">{{ product.price }}</span>
 
-          <button @click="contactSeller" class="contact-button">
-            Связаться
-          </button>
+          <button @click="contact" class="contact-button">Связаться</button>
 
           <p class="product-description-title">Описание:</p>
           <p class="product-description">{{ product.description }}</p>
@@ -31,7 +29,7 @@ export default {
       this.$emit("close");
     },
     contact() {
-      alert("Связаться с продавцом!");
+      alert("Связаться с продавцов");
     },
   },
 };

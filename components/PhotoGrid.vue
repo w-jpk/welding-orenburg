@@ -11,7 +11,11 @@
     </div>
 
     <div v-if="isModalOpen" class="modal" @click="closeModal">
-      <img :src="currentImage" class="modal-image" alt="Large Image" />
+      <img
+        :src="currentImage"
+        class="modal-image"
+        alt="Large Image"
+        :style="{ zIndex: 1000 }" />
     </div>
   </div>
 </template>
@@ -33,10 +37,12 @@ const currentImage = ref("");
 const openImage = (image) => {
   currentImage.value = image;
   isModalOpen.value = true;
+  document.body.style.overflow = "hidden";
 };
 
 const closeModal = () => {
   isModalOpen.value = false;
+  document.body.style.overflow = "";
 };
 </script>
 
