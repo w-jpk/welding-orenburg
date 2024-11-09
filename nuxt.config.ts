@@ -9,7 +9,13 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "nuxt-typed-router",
     "@pinia/nuxt",
+    "@nuxt/icon",
   ],
+  icon: {
+    serverBundle: {
+      collections: ["uil", "mdi"],
+    },
+  },
   app: {
     head: {
       title: "Сварка Аргоном | Оренбург",

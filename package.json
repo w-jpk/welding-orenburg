@@ -10,6 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@iconify-json/uil": "^1.2.1",
+    "@nuxt/icon": "^1.7.0",
     "@pinia/nuxt": "^0.7.0",
     "nuxt": "^3.13.0",
     "pinia": "^2.2.6",
