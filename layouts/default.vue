@@ -492,7 +492,7 @@ body a {
 }
 
 #services {
-  min-height: 100dvh;
+  height: 100dvh;
   width: 100%;
   background-color: #262626;
 
@@ -508,7 +508,7 @@ body a {
 
 .product-layout {
   display: flex;
-  max-height: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   gap: 3rem;
