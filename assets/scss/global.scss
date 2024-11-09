@@ -1,5 +1,5 @@
-@import "vars";
-@import "mixins";
+@use "mixins";
+@use "vars";
 
 * {
   margin: 0;

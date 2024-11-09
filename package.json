@@ -13,15 +13,16 @@
     "@pinia/nuxt": "^0.7.0",
     "nuxt": "^3.13.0",
     "pinia": "^2.2.6",
-    "sass": "^1.79.5",
-    "sass-loader": "^16.0.2",
+    "sass": "^1.80.6",
+    "sass-loader": "^16.0.3",
+    "vite": "^5.4.10",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
-    "@nuxt/fonts": "^0.10.0",
+    "@nuxt/fonts": "^0.10.2",
     "@nuxt/image": "^1.8.1",
-    "@vueuse/nuxt": "^11.1.0",
+    "@vueuse/nuxt": "^11.2.0",
     "nuxt-typed-router": "^3.7.0"
   }
 }

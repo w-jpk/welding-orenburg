@@ -47,7 +47,8 @@
     <section id="services" class="services-container">
       <h1>Наши услуги</h1>
       <div class="product-layout">
-        <div class="main-product">
+        <product-card-new :products="sideProducts" />
+        <!-- <div class="main-product">
           <ProductCard :product="mainProduct" @open-modal="showModal" />
         </div>
         <div class="side-products">
@@ -64,7 +65,7 @@
               :style="{ zIndex: 1000 }"
               @close="hideModal" />
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
     <section id="works">
@@ -491,7 +492,7 @@ body a {
 }
 
 #services {
-  height: 100dvh;
+  min-height: 100dvh;
   width: 100%;
   background-color: #262626;
 
