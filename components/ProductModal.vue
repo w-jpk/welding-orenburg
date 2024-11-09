@@ -82,6 +82,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: default;
 }
 
 .product-price {
@@ -111,10 +112,12 @@ export default {
 .product-description-title {
   font-weight: bold;
   margin-top: 40px;
+  cursor: default;
 }
 
 .product-description {
   font-size: 15px;
   color: #333;
+  cursor: default;
 }
 </style>
