@@ -47,8 +47,8 @@
     <section id="services" class="services-container">
       <h1>Наши услуги</h1>
       <div class="product-layout">
-        <product-card-new :products="sideProducts" />
-        <!-- <div class="main-product">
+        <!-- <product-card-new :products="sideProducts" /> -->
+        <div class="main-product">
           <ProductCard :product="mainProduct" @open-modal="showModal" />
         </div>
         <div class="side-products">
@@ -65,7 +65,7 @@
               :style="{ zIndex: 1000 }"
               @close="hideModal" />
           </div>
-        </div> -->
+        </div>
       </div>
     </section>
     <section id="works">
@@ -508,7 +508,7 @@ body a {
 
 .product-layout {
   display: flex;
-  height: 100%;
+  max-height: 100%;
   justify-content: center;
   align-items: center;
   gap: 3rem;
