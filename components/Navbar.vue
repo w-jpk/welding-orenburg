@@ -115,7 +115,7 @@ onUnmounted(() => {
   padding: 1rem;
   background-color: transparent;
   transition: background-color 0.3s ease-in-out;
-  z-index: 1000;
+  z-index: 998;
 }
 
 .mobile-navbar {

@@ -70,7 +70,7 @@
     <section id="works">
       <div class="works-title"><h1>Наши работы</h1></div>
       <div class="gallary-container">
-        <PhotoGrid :style="{ zIndex: 999 }" />
+        <PhotoGrid />
       </div>
     </section>
     <section id="about-us" class="about-us">
@@ -113,15 +113,13 @@
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import Navbar from "~/components/Navbar.vue";
 import ProductCard from "~/components/ProductCard.vue";
-import prod_1 from "~/assets/prod_1.png";
-import prod_2 from "~/assets/prod_2.png";
-import prod_3 from "~/assets/prod_3.png";
 import YandexMap from "~/components/YandexMap.vue";
 import LoadingScreen from "~/components/LoadingScreen.vue";
 import { onNuxtReady } from "#app";
 import ProductModal from "~/components/ProductModal.vue";
 import PhotoGrid from "~/components/PhotoGrid.vue";
 import AboutUsSlider from "~/components/AboutUsSlider.vue";
+import { useMyServicesStore } from "~/stores/services";
 
 const selectedProduct = ref(null);
 const isModalVisible = ref(false);
@@ -146,66 +144,10 @@ onNuxtReady(() => {
 
 const currentBanner = ref(1);
 
-const mainProduct = {
-  image: prod_3,
-  name: "Основной товар",
-  price: "от 3000 руб.",
-  description: "Description for product 1",
-};
-const sideProducts = [
-  {
-    image: prod_1,
-    name: "Товар 1",
-    price: "от 1000 руб.",
-    description: "Description for product 1",
-  },
-  {
-    image: prod_2,
-    name: "Товар 2",
-    price: "от 1500 руб.",
-    description: "Description for product 1",
-  },
-  {
-    image: prod_3,
-    name: "Товар 3",
-    price: "от 2000 руб.",
-    description: "Description for product 1",
-  },
-  {
-    image: prod_1,
-    name: "Товар 4",
-    price: "от 2500 руб.",
-    description: "Description for product 1",
-  },
-];
+const mainProduct = useMyServicesStore().mainProduct;
+const sideProducts = useMyServicesStore().sideProducts;
 
-const banners = [
-  {
-    subtitle: "СВАРКА АРГОНОМ",
-    title: "ОРЕНБУРГ",
-    link: "#services",
-    label: "Главная",
-  },
-  {
-    subtitle: "Что мы делаем",
-    title:
-      "Выполняем сварочные работы алюминия, нержавеющей стали и других цветных металлов. ",
-    link: "#works",
-    label: "Работы",
-  },
-  {
-    subtitle: "Где мы находимся",
-    title: "Мы находимся в Оренбурге",
-    link: "#about-us",
-    label: "О нас",
-  },
-  {
-    subtitle: "Наши контакты",
-    title: "по кнопке ниже",
-    link: "#contact-us",
-    label: "Контакты",
-  },
-];
+const banners = useMyBannersStore().banners;
 
 let bannerTimer;
 
@@ -283,7 +225,7 @@ body a {
 
 #section-1 {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   color: #fff;
   background-color: #222;
   background-image: url(../assets/welding.png);
@@ -295,7 +237,7 @@ body a {
 #section-1 .content-slider {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 #section-1 .content-slider input {
@@ -304,8 +246,9 @@ body a {
 #section-1 .content-slider .slider {
   position: relative;
   width: inherit;
-  height: inherit;
+  min-height: 100dvh;
   overflow: hidden;
+  margin: 0 auto;
 }
 #section-1 .content-slider .slider .banner {
   position: absolute;
@@ -321,11 +264,15 @@ body a {
   transition: all 0.5s ease;
 }
 #section-1 .content-slider .slider .banner .banner-inner-wrapper {
-  height: 100%;
+  min-height: 100dvh;
   padding-top: 6em;
+  margin: 0 auto;
 
   box-sizing: border-box;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   content: "";
   background: -webkit-gradient(
     linear,
@@ -348,7 +295,9 @@ body a {
   line-height: 95%;
 }
 #section-1 .content-slider .slider .banner .banner-inner-wrapper .line {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 4em;
   height: 0.1875em;
   margin: 2.5em auto;
@@ -601,7 +550,7 @@ body a {
 }
 
 #about-us {
-  height: 100dvh;
+  max-height: 100vh;
   width: 100%;
   background-color: #262626;
 
@@ -613,8 +562,7 @@ body a {
   display: flex;
   align-items: center;
   justify-content: center;
-  // padding: 0 5rem;
-  // height: 90vh;
+  max-height: 100vh;
 }
 
 .about-us-text {

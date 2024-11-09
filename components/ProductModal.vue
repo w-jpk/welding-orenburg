@@ -4,14 +4,16 @@
       <div class="modal-content">
         <img :src="product.image" alt="Product Image" class="product-image" />
         <div class="product-details">
-          <h2>{{ product.name }}</h2>
-          <span class="product-price">{{ product.price }}</span>
-
-          <button @click="contact" class="contact-button">Связаться</button>
-
-          <p class="product-description-title">Описание:</p>
-          <p class="product-description">{{ product.description }}</p>
+          <div>
+            <h2>{{ product.name }}</h2>
+            <span class="product-price">{{ product.price }}</span>
+          </div>
+          <div>
+            <button @click="contact" class="contact-button">Связаться</button>
+          </div>
         </div>
+        <p class="product-description-title">Описание:</p>
+        <p class="product-description">{{ product.description }}</p>
         <button class="close-button" @click="closeModal">✖</button>
       </div>
     </div>
@@ -52,15 +54,19 @@ export default {
   background-color: white;
   border-radius: 8px;
   width: 80%;
-  max-width: 1000px;
+  max-width: 90vh;
   padding: 5px;
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: auto;
+  max-height: 80vh;
+  scrollbar-width: none;
 }
 
 .modal-content {
   display: flex;
+  flex-direction: column;
   padding: 20px;
 }
 
@@ -72,31 +78,30 @@ export default {
 }
 
 .product-details {
-  flex-grow: 1;
-  padding-left: 20px;
+  margin-top: 1rem;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .product-price {
   font-size: 1.5em;
-  margin: 10px 0;
 }
 
 .contact-button {
-  margin-top: 30px;
   padding: 10px 20px;
   background-color: #ff903f;
   color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  align-self: flex-end;
 }
 
 .close-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0px;
+  right: 5px;
   background: transparent;
   border: none;
   font-size: 20px;
@@ -109,7 +114,6 @@ export default {
 }
 
 .product-description {
-  margin-top: 5px;
   font-size: 15px;
   color: #333;
 }

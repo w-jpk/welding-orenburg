@@ -26,9 +26,9 @@ export default {
 .product-card {
   background-color: #ccc;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+  /* text-align: center; */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s;
@@ -41,7 +41,7 @@ export default {
 .product-image {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 15px;
   object-fit: cover;
 }
 
@@ -52,6 +52,6 @@ export default {
 
 .product-price {
   font-size: 16px;
-  color: #28a745;
+  color: #111;
 }
 </style>

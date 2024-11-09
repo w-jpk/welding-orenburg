@@ -10,7 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.7.0",
     "nuxt": "^3.13.0",
+    "pinia": "^2.2.6",
     "sass": "^1.79.5",
     "sass-loader": "^16.0.2",
     "vue": "latest",

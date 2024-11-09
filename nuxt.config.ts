@@ -3,7 +3,13 @@ export default defineNuxtConfig({
   ssr: true,
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  modules: ["@vueuse/nuxt", "@nuxt/fonts", "@nuxt/image", "nuxt-typed-router"],
+  modules: [
+    "@vueuse/nuxt",
+    "@nuxt/fonts",
+    "@nuxt/image",
+    "nuxt-typed-router",
+    "@pinia/nuxt",
+  ],
   app: {
     head: {
       title: "Сварка Аргоном | Оренбург",
@@ -36,7 +42,7 @@ export default defineNuxtConfig({
   fonts: {
     google: {
       families: ["Poppins:100,200,300,400,500,600,700,800,900"],
-    },
+    } as any,
   },
   css: ["@/assets/scss/global.scss"],
   vite: {
