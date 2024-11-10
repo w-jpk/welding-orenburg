@@ -102,8 +102,9 @@
     <section id="footer">
       <p class="footer-text">
         Copyright &#169; 2024
-        <a href="https://github.com/w-jpk" class="footer-link">W-JPK</a>. All
-        Rights Reserved.
+        <a href="https://github.com/w-jpk" class="footer-link" target="_blank"
+          >W-JPK</a
+        >. All Rights Reserved.
       </p>
     </section>
   </div>
