@@ -2,7 +2,6 @@
   <div v-if="loading"><LoadingScreen /></div>
   <div v-else>
     <Navbar />
-    <!-- <link-social style="z-index: 1000" /> -->
     <section id="section-1">
       <div class="content-slider">
         <input
