@@ -47,6 +47,7 @@
     <section id="services" class="services-container">
       <h1>Наши услуги</h1>
       <div class="product-layout">
+        <!-- <product-card-new :products="sideProducts" /> -->
         <div class="main-product">
           <ProductCard :product="mainProduct" @open-modal="showModal" />
         </div>

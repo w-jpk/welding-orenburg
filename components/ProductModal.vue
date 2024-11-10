@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-overlay" @click="closeModal">
+  <div class="modal-overlay" @click.stop="closeModal">
     <div class="modal" @click.stop>
       <div class="modal-content">
         <img :src="product.image" alt="Product Image" class="product-image" />
@@ -9,19 +9,27 @@
             <span class="product-price">{{ product.price }}</span>
           </div>
           <div>
-            <button @click="contact" class="contact-button">Связаться</button>
+            <button @click.stop="contact" class="contact-button">
+              Связаться
+            </button>
           </div>
         </div>
         <p class="product-description-title">Описание:</p>
         <p class="product-description">{{ product.description }}</p>
-        <button class="close-button" @click="closeModal">✖</button>
+        <button class="close-button" @click.stop="closeModal">✖</button>
       </div>
     </div>
+    <link-social v-show="isModalVisible" @close="isModalVisible = false" />
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      isModalVisible: false,
+    };
+  },
   props: {
     product: Object,
     isVisible: Boolean,
@@ -31,7 +39,7 @@ export default {
       this.$emit("close");
     },
     contact() {
-      alert("Связаться с продавцов");
+      this.isModalVisible = true;
     },
   },
 };
