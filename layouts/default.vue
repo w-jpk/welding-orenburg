@@ -1,7 +1,7 @@
 <template>
   <div v-if="loading"><LoadingScreen /></div>
   <div v-else>
-    <Navbar />
+    <mobile-nav-bar />
     <section id="section-1">
       <div class="content-slider">
         <input
@@ -112,7 +112,6 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
-import Navbar from "~/components/Navbar.vue";
 import ProductCard from "~/components/ProductCard.vue";
 import YandexMap from "~/components/YandexMap.vue";
 import LoadingScreen from "~/components/LoadingScreen.vue";
