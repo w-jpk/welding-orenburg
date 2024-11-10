@@ -21,11 +21,7 @@
             'navigation--mobile--fadeout': isFadingOut,
           },
         ]">
-        <li
-          v-for="(item, index) in navItems"
-          :key="index"
-          :class="{ active: activeIndex === index }"
-          @click="setActive(index)">
+        <li v-for="(item, index) in navItems" :key="index">
           <a>{{ item.text }}</a>
         </li>
       </ul>

@@ -491,7 +491,7 @@ body a {
 }
 
 #services {
-  height: 100dvh;
+  min-height: 100dvh;
   width: 100%;
   background-color: #262626;
 
@@ -511,6 +511,7 @@ body a {
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  margin-top: 5rem;
 }
 
 .side-products {
@@ -528,7 +529,7 @@ body a {
 }
 
 #works {
-  height: 100dvh;
+  min-height: 100dvh;
   width: 100%;
   background-color: #262626;
   display: flex;
@@ -540,8 +541,9 @@ body a {
 }
 
 .gallary-container {
-  // margin-left: 3rem;
-  // margin-right: 3rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -550,7 +552,7 @@ body a {
 }
 
 #about-us {
-  max-height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-color: #262626;
 
@@ -600,7 +602,7 @@ body a {
 }
 
 #contact-us {
-  height: 90dvh;
+  min-height: 90dvh;
   width: 100%;
   background-color: #262626;
 
@@ -803,6 +805,7 @@ body a {
     width: 95%;
   }
 }
+
 @media only screen and (max-width: 480px) {
   .main-header .header-wrapper {
     width: 97%;
