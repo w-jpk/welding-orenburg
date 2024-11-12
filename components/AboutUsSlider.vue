@@ -167,10 +167,9 @@ img {
   border-radius: 1rem;
 }
 
-/* Индикаторы слайдов */
 .dots {
   position: absolute;
-  bottom: 20px; /* Уменьшено расстояние до нижней границы */
+  bottom: 20px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -188,5 +187,41 @@ img {
 }
 .dots li.active {
   width: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .slider {
+    width: 100%;
+    margin-top: 5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .about-us-image {
+    display: none;
+  }
+  .about-us-content {
+    flex-direction: column;
+  }
+  .about-us-text {
+    width: 100%;
+    text-align: justify;
+    color: white;
+
+    li {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 0.5rem;
+    }
+  }
 }
 </style>

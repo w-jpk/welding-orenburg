@@ -739,6 +739,10 @@ body a {
   #section-1 .content-slider nav .controls {
     width: 80%;
   }
+  .contact-us-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 @media only screen and (max-width: 860px) {
   .main-header .header-wrapper .main-menu li {

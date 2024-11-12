@@ -60,17 +60,26 @@ onMounted(() => {
   width: 800px;
   height: 450px;
 }
+
+@media screen and (max-width: 1024px) {
+  .yamap {
+    margin-top: 1rem;
+    width: 600px;
+    height: 400px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .yamap {
     margin-top: 1rem;
-    width: 400%;
+    width: 400px;
     height: 400px;
   }
 }
 @media screen and (max-width: 480px) {
   .yamap {
     margin-top: 1rem;
-    width: 300%;
+    width: 300px;
     height: 300px;
   }
 }

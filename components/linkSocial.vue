@@ -17,14 +17,6 @@
           </div>
           <p class="whatsapp-text">Whatsapp</p>
         </div>
-        <!-- <div
-          class="icons"
-          @click="openLink('viber://chat?number=+79228293974')">
-          <div class="viber-icon">
-            <Icon name="basil:viber-outline" size="40" style="color: #834995" />
-          </div>
-          <p class="viber-text">Viber</p>
-        </div> -->
         <div class="icons" @click="openLink('tel:+79228293974')">
           <div class="phone-icon">
             <Icon name="uil:phone" size="40" style="color: gray" />
