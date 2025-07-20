@@ -46,25 +46,27 @@
     </section>
     <section id="services" class="services-container">
       <h1>Наши услуги</h1>
-      <div class="product-layout">
-        <div class="main-product">
+      <div class="services-flex-layout">
+        <div class="main-product-col">
           <ProductCard :product="mainProduct" @open-modal="showModal" />
         </div>
-        <div class="side-products">
-          <div class="grid-container">
+        <div class="side-products-col">
+          <div class="side-grid">
             <ProductCard
               v-for="(product, index) in sideProducts"
               :key="index"
               :product="product"
-              @open-modal="showModal" />
-            <ProductModal
-              v-if="selectedProduct"
-              :product="selectedProduct"
-              :isVisible="isModalVisible"
-              :style="{ zIndex: 1000 }"
-              @close="hideModal" />
+              @open-modal="showModal"
+            />
           </div>
         </div>
+        <ProductModal
+          v-if="selectedProduct"
+          :product="selectedProduct"
+          :isVisible="isModalVisible"
+          :style="{ zIndex: 1000 }"
+          @close="hideModal"
+        />
       </div>
     </section>
     <section id="works">
@@ -146,6 +148,9 @@ const currentBanner = ref(1);
 
 const mainProduct = useMyServicesStore().mainProduct;
 const sideProducts = useMyServicesStore().sideProducts;
+
+// Объединяем все услуги в один массив
+const allProducts = [mainProduct, ...sideProducts];
 
 const banners = useMyBannersStore().banners;
 
@@ -494,38 +499,158 @@ body a {
   min-height: 100dvh;
   width: 100%;
   background-color: #262626;
-
   h1 {
     padding: 5rem 0 0 5rem;
   }
 }
-
 .services-container {
   display: flex;
   flex-direction: column;
 }
-
 .product-layout {
   display: flex;
-  height: 100%;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   gap: 3rem;
   margin-top: 5rem;
 }
-
 .side-products {
-  width: 530px;
+  width: 100%;
 }
-
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-.product-card {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
   width: 100%;
+  padding: 5rem 5rem;
+}
+.services-flex-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  width: max-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem 2rem;
+}
+@media (max-width: 1400px) {
+  .services-flex-layout {
+    width: 100%;
+    max-width: 1400px;
+  }
+}
+@media (max-width: 1024px) {
+  .services-flex-layout {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem 0.5rem;
+    width: 100%;
+    max-width: 98vw;
+  }
+}
+@media (max-width: 600px) {
+  .services-flex-layout {
+    padding: 0.5rem 0.2rem;
+    gap: 1rem;
+    width: 100%;
+    max-width: 100vw;
+  }
+}
+.main-product-col {
+  flex: 0 0 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-product-col .product-card {
+  width: 540px;
+  min-height: 540px;
+  max-width: 100%;
+  font-size: 1.18em;
+}
+@media (max-width: 1400px) {
+  .main-product-col .product-card {
+    width: 420px;
+    min-height: 420px;
+    font-size: 1.08em;
+  }
+}
+@media (max-width: 1024px) {
+  .main-product-col {
+    justify-content: center;
+  }
+  .main-product-col .product-card {
+    width: 100%;
+    min-height: 260px;
+    font-size: 1em;
+  }
+}
+.side-products-col {
+  flex: 1 1 55%;
+  display: flex;
+  justify-content: flex-start;
+}
+.side-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  .product-layout {
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+  .grid-container {
+    gap: 1rem;
+  }
+  .services-flex-layout {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem 0.5rem;
+  }
+  .main-product-col {
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex: unset;
+  }
+  .side-products-col {
+    justify-content: center;
+    flex: unset;
+  }
+  .side-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  #services h1 {
+    padding: 2rem 0 0 1rem;
+    font-size: 1.5rem;
+  }
+  .product-layout {
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .services-flex-layout {
+    padding: 0.5rem 0.2rem;
+    gap: 1rem;
+  }
+  .main-product-col {
+    margin-bottom: 1rem;
+  }
+  .side-grid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
 }
 
 #works {
